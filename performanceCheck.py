@@ -6,6 +6,7 @@ import divisor
 import primeFactorization
 import gcd
 import lcm
+import fibonacci
 
 def start():
 	return time.time()
@@ -77,3 +78,27 @@ def testGcdEuclideanIteration():
 		gcd.euclideanIteration(a, b)
 		count.append(end(start_time))
 	return printLog("gcd.euclideanIteration", average(count))
+
+def testFibonacciRecursive(n):
+	count = []
+	start_time = start()
+	print(fibonacci.recursive(n))
+	return printLog("fibonacci.recursive", end(start_time))
+
+def testFibonacciMemo(n):
+	count = []
+	start_time = start()
+	print(fibonacci.memo(n))
+	return printLog("fibonacci.recursive", end(start_time))
+
+def testFibonacciDynamicTable(n):
+	count = []
+	start_time = start()
+	print(fibonacci.dynamicTable(n))
+	return printLog("fibonacci.dynamicTable", end(start_time))
+
+def testFibonacciDynamicValue(n):
+	count = []
+	start_time = start()
+	print(fibonacci.dynamicValue(n))
+	return printLog("fibonacci.dynamicValue", end(start_time))
