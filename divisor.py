@@ -1,3 +1,5 @@
+import math
+
 def divisor(n):
     divisor = []
     i = 1
