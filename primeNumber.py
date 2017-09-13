@@ -18,7 +18,7 @@ def isPrimeSqrt(n):
 #에라토스테네스의 체
 def EratosthenesSiev(n):
 	p=2
-	arr = list(range(1, n))
+	arr = list(range(1, n+1))
 	
 	while(pow(p,2) < n):
 		for i in arr:
