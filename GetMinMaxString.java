@@ -1,18 +1,21 @@
-import java.util.*;
-
 public class GetMinMaxString {
     public String getMinMaxString(String str) {
       	String[] numberStr = str.split(" ");
-      	int[] numberInt = new int[numberStr.length];
+      	int min = 0;
+      	int max = 0;
+      	int tmp = 0;
       
-        int i = 0;
-      	for (String number: numberStr) {
-          numberInt[i] = Integer.parseInt(number);
-          i = i+1;
+      	min = max = Integer.parseInt(numberStr[0]);
+        for(int i=1 ; i<numberStr.length ; i++) {
+      		tmp = Integer.parseInt(numberStr[i]);
+          if (tmp>max) {
+          	max = tmp;
+          } else if (tmp<min) {
+          	min = tmp;
+          }
         }
-      	Arrays.sort(numberInt);
       
-        return numberInt[0] + " " + numberInt[numberInt.length-1];
+        return min + " " + max;
     }
 
     public static void main(String[] args) {
