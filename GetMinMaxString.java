@@ -7,7 +7,7 @@ public class GetMinMaxString {
       
       	min = max = Integer.parseInt(numberStr[0]);
         for(int i=1 ; i<numberStr.length ; i++) {
-      		tmp = Integer.parseInt(numberStr[i]);
+      	  tmp = Integer.parseInt(numberStr[i]);
           if (tmp>max) {
           	max = tmp;
           } else if (tmp<min) {
