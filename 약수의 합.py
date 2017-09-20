@@ -6,14 +6,12 @@ import math
 def sumDivisor(num):
     answer = 0
     sqrt = int(math.sqrt(num))
-    i = 1
     
-    while(i<sqrt):
+    for i in range(1,sqrt):
         if num == 1:
             break;
         if num%i == 0:
             answer += (i + int(num/i))
-        i = i+1
         
     if pow(sqrt,2) == num:
         answer += int(sqrt)
