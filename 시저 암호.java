@@ -6,9 +6,9 @@
 //“a B z”,4를 입력받았다면 “e F d”를 리턴합니다.
 
 class Caesar {
-	String caesar(String s, int n) {
+  String caesar(String s, int n) {
     //init
-		String result = "";
+    String result = "";
     char[] planArr = s.toCharArray();
     int encKey = n%26;
     
@@ -27,11 +27,11 @@ class Caesar {
       result = result + (char)encC;
     }
     
-		return result;
-	}
+    return result;
+  }
 
-	public static void main(String[] args) {
-		Caesar c = new Caesar();
-		System.out.println("s는 'a B z', n은 4인 경우: " + c.caesar("a B z", 4));
-	}
+  public static void main(String[] args) {
+    Caesar c = new Caesar();
+    System.out.println("s는 'a B z', n은 4인 경우: " + c.caesar("a B z", 4));
+  }
 }
