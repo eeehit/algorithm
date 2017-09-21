@@ -10,25 +10,33 @@
 import java.util.*;
 
 class NumOfPrime {
-    int numberOfPrime(int n) {
-        int p=2;
-        ArrayList arr = new ArrayList();
-        for(int i=2 ; i<n+1 ; i++) {
-            arr.add(i);
-        }
-        while (Math.pow(p,2) <= n) {
-            for(int i=0 ; i<arr.size() ; i++) {
-                int num = (int)arr.get(i);
-                if (num%p == 0 && num!=p) {
-                    arr.remove(i);
-                }
-            }
-            p = p+1;
-        }
-        return arr.size();
+  int numberOfPrime(int n) {
+    //init 
+    //에라토스테네스의 체
+    int p=2;
+    ArrayList<Integer> arr = new ArrayList();
+    for(int i=2 ; i<n+1 ; i++) {
+      arr.add(i);
     }
-    public static void main(String[] args) {
-        NumOfPrime prime = new NumOfPrime();
-        System.out.println( prime.numberOfPrime(10) );
+    
+    //proc
+    while (Math.pow(p,2) <= n) {
+      for(int i=0 ; i<arr.size() ; i++) {
+        int num = arr.get(i);
+        if (num%p == 0 && num!=p) {
+          arr.remove(i);
+        }
+      }
+      p = p+1;
     }
+    
+    //output
+    return arr.size();
+  }
+
+	public static void main(String[] args) {
+		NumOfPrime prime = new NumOfPrime();
+		System.out.println( prime.numberOfPrime(10) );
+	}
+
 }
