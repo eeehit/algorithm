@@ -4,10 +4,9 @@
 
 def collatz(num):
     answer = 0
-    while(num is not 1):
+    while(num > 1):
         if answer == 500:
-            answer = -1
-            break;
+            return -1
         if num % 2 is 0:
             num = num // 2
         else:
