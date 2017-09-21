@@ -10,7 +10,7 @@
 import java.util.stream.*;
 
 class NumOfPrime {
-	int numberOfPrime(int n) {
+    int numberOfPrime(int n) {
     int p=2;
     int[] arr = new int[n+1];
     while (Math.pow(p,2) <= n) {
