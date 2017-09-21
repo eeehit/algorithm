@@ -7,21 +7,27 @@
 //10을 입력받았다면, 1부터 10 사이의 소수는 [2,3,5,7] 4개가 존재하므로 4를 반환
 //5를 입력받았다면, 1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
 
-import java.util.stream.*;
+import java.util.*;
 
 class NumOfPrime {
     int numberOfPrime(int n) {
     int p=2;
-    int[] arr = new int[n+1];
-    while (Math.pow(p,2) <= n) {
-        for(int i=2 ; i<arr.length ; i++) {
-        	 if (i%p == 0 && i != p) {
-                arr[i] = 1;
-           }
-        }
-      	p = p+1;
+    
+    ArrayList arr = new ArrayList();
+    for(int i=2 ; i<n+1 ; i++) {
+    	arr.add(i);
     }
-    return (arr.length-2)-IntStream.of(arr).sum();
+    
+    while (Math.pow(p,2) <= n) {
+    	for(int i=0 ; i<arr.size() ; i++) {
+      	int num = (int)arr.get(i);
+        if (num%p == 0 && num!=p) {
+        	arr.remove(i);
+        }
+      }
+    	p = p+1;
+    }
+    return arr.size();
 	}
 
 	public static void main(String[] args) {
